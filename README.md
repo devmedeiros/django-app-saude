@@ -1,6 +1,6 @@
-<p align="center"><img src="https://raw.githubusercontent.com/devmedeiros/django-app-saude/main/pessoas/static/health_logo.svg" height=100></p>
-
 # Django App Saúde
+
+<p align="center"><img src="https://raw.githubusercontent.com/devmedeiros/django-app-saude/main/pessoas/static/health_logo.svg" height=100></p>
 
 ## Objetivo
 
