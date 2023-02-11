@@ -1,3 +1,5 @@
+<p align="center"><img src="https://raw.githubusercontent.com/devmedeiros/django-app-saude/main/pessoas/static/health_logo.svg" height=100></p>
+
 # Django App Saúde
 
 ## Objetivo
@@ -11,6 +13,7 @@ O objetivo era criar um aplicativo capaz de armazenar informações e apresentar
 | Paciente | ver procedimentos |
 
 ## Pré-visualização
+![django_app_saude](https://user-images.githubusercontent.com/33239902/218279672-6062e753-8a5a-442a-8751-5b7ecc8b0cfa.gif)
 
 ## Dados
 
