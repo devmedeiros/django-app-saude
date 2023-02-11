@@ -1,0 +1,49 @@
+{% extends "base/base.html" %}
+{% load render_table from django_tables2 %}
+{% load bootstrap5 %}
+{% load static %}
+{% block title %}Formulário de Procedimentos{% endblock %}
+
+<!-- head -->
+{% block head %}
+{% include "base/navbar.html" %}
+{% endblock %}
+
+<!-- body -->
+{% block body %}
+<center>
+    <img src="{% static 'procedimentos.jpg' %}" class="img-fluid" alt="Teste" width="35%">
+    <h1>Formulário Procedimento</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    {% bootstrap_field form.procedimento placeholder='' %}
+                </div>
+                <div class="col-sm">
+                    {% bootstrap_field form.data_execucao placeholder='' style='height:15px;' %}
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    {% bootstrap_field form.paciente placeholder='' %}
+                </div>
+                <div class="col-sm">
+                    {% bootstrap_field form.medico placeholder='' %}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+        </div>
+    </form>
+</center>
+{% endblock %}
+
+<!-- footer -->
+{% block footer %}
+{% include "base/footer.html" %}
+{% endblock %}

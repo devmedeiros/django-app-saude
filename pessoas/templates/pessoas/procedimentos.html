@@ -1,0 +1,40 @@
+{% extends "base/base.html" %}
+{% load render_table from django_tables2 %}
+{% block title %}Procedimentos{% endblock %}
+
+<!-- head -->
+{% block head %}
+{% include "base/navbar.html" %}
+{% endblock %}
+
+<!-- body -->
+{% block body %}
+<center>
+    <img src="../static/procedimentos.jpg" class="img-fluid" alt="Teste" width="35%">
+    <br>
+    {% render_table table %}
+    <br>
+    {% if perms.pessoas.add_procedimento %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <a href="{% url 'procedimento_create_alias' %}">
+                    <input type="button" class="btn btn-success" value="Incluir novos procedimentos">
+                </a>
+            </div>
+            <div class="col-sm">
+                <a href="{% url 'procedimento_download_alias' %}">
+                    <input type="button" class="btn btn-primary" value="Download todos procedimentos">
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    
+</center>
+{% endblock %}
+
+<!-- footer -->
+{% block footer %}
+{% include "base/footer.html" %}
+{% endblock %}

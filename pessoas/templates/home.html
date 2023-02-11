@@ -1,0 +1,48 @@
+{% extends "base/base.html" %}
+{% block title %}Página Inicial{% endblock %}
+
+<!-- head -->
+{% block head %}
+{% include "base/navbar.html" %}
+{% endblock %}
+
+<!-- body -->
+{% block body %}
+<br>
+<h1>Boas vindas, {{ user.get_short_name }}</h1>
+<br>
+
+{% for fun in funcao %}
+    {% if fun.funcao == 'PA' %}
+        {% for regs in informacoes %}
+            {% if regs.procedimento == 'CH' %}
+                <p>Sua última consulta foi um Check-up Geral. O atendimento foi feito por {{regs.nome_medico}} no dia {{regs.data_execucao|date:"d/m/Y"}}.</p>
+            {% elif regs.procedimento == 'CO' %}
+                <p>Sua última consulta foi uma Consulta. O atendimento foi feito por {{regs.nome_medico}} no dia {{regs.data_execucao|date:"d/m/Y"}}.</p>
+            {% elif regs.procedimento == 'RE' %}
+                <p>Sua última consulta foi um Retorno. O atendimento foi feito por {{regs.nome_medico}} no dia {{regs.data_execucao|date:"d/m/Y"}}.</p>
+            {% else %}
+                <p>Ainda não há nenhuma consulta sua no sistema.</p>
+            {% endif %}
+        {% endfor %}
+    {% elif fun.funcao == 'ME'%}
+        {% for regs in informacoes %}
+            {% if regs.procedimento == 'CH' %}
+                <p>Sua última consulta foi um Check-up Geral. O atendimento foi para {{regs.nome_paciente}} no dia {{regs.data_execucao|date:"d/m/Y"}}.</p>
+            {% elif regs.procedimento == 'CO' %}
+                <p>Sua última consulta foi uma Consulta. O atendimento foi feito para {{regs.nome_paciente}} no dia {{regs.data_execucao|date:"d/m/Y"}}.</p>
+            {% elif regs.procedimento == 'RE' %}
+                <p>Sua última consulta foi um Retorno. O atendimento foi feito para {{regs.nome_paciente}} no dia {{regs.data_execucao|date:"d/m/Y"}}.</p>
+            {% else %}
+                <p>Ainda não há nenhuma consulta sua no sistema.</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+
+{% endblock %}
+
+<!-- footer -->
+{% block footer %}
+{% include "base/footer.html" %}
+{% endblock %}

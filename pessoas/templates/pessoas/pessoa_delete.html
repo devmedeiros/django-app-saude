@@ -1,0 +1,28 @@
+{% extends "base/base.html" %}
+{% load render_table from django_tables2 %}
+{% load bootstrap5 %}
+{% load static %}
+{% block title %}Excluir Pessoas{% endblock %}
+
+<!-- head -->
+{% block head %}
+{% include "base/navbar.html" %}
+{% endblock %}
+
+<!-- body -->
+{% block body %}
+            <center>
+            <h1>Apagar registro</h1>
+            <img src="{% static 'pessoas.jpg' %}" class="img-fluid" alt="Teste" width="50%">
+            <form method="POST">
+                {% csrf_token %}
+                <p>{{object.nome}}</p>
+                <button type="submit" class="btn btn-danger">Sim, exclua!</button> &nbsp;
+            </form>
+            </center>
+{% endblock %}
+
+<!-- footer -->
+{% block footer %}
+{% include "base/footer.html" %}
+{% endblock %}

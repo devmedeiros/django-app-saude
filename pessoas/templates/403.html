@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}Página Inicial{% endblock %}
+
+<!-- head -->
+{% block head %}
+{% include "base/navbar.html" %}
+{% endblock %}
+
+<!-- body -->
+{% block body %}
+<center>
+<br>
+<h1>403 - Não autorizado</h1>
+<br>
+<img src="{% static 'forbidden.jpg' %}" class="img-fluid" alt="Teste" width="30%">
+<br>
+<p>Você não possui autorização para acessar este conteúdo</p>
+</center>
+{% endblock %}
+
+<!-- footer -->
+{% block footer %}
+{% include "base/footer.html" %}
+{% endblock %}

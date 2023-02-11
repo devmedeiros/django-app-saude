@@ -1,0 +1,34 @@
+{% extends "base/base.html" %}
+{% block title %}Medeiros Saúde{% endblock %}
+
+<!-- head -->
+{% block head %}
+{% include "base/navbar.html" %}
+{% endblock %}
+
+<!-- body -->
+{% block body %}
+<center>
+    <img src="..\static\pessoas.jpg" class="img-fluid" alt="Teste" width="50%">
+    <br>
+</center>
+<form method="POST" action="{% url 'index_alias' %}">
+    {% csrf_token %}
+    <center>
+        <p style="width:300px;">Boas Vindas!</p>
+        <div style="border-style: ridge; border-radius: 10px; width: 300px;">
+            <br>
+            <p><input type="text" name="username" class="border-top-0" placeholder="Usuário" style="width:250px;">
+            </p>
+            <p></p><input type="password" name="password" class="border-top-0" placeholder="Senha" style="width:250px;">
+            </p>
+            <p></p><input type="submit" value="Acessar" class="btn btn-info"></p>
+        </div>
+    </center>
+</form>
+{% endblock %}
+
+<!-- footer -->
+{% block footer %}
+{% include "base/footer.html" %}
+{% endblock %}

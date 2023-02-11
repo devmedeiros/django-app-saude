@@ -1,0 +1,53 @@
+{% extends "base/base.html" %}
+{% load render_table from django_tables2 %}
+{% load bootstrap5 %}
+{% load static %}
+{% block title %}Formulário de Pessoas{% endblock %}
+
+<!-- head -->
+{% block head %}
+{% include "base/navbar.html" %}
+{% endblock %}
+
+<!-- body -->
+{% block body %}
+<div class="container">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <center>
+            <img src="{% static 'pessoas.jpg' %}" class="img-fluid" alt="Teste" width="50%">
+            <h1>Formulário Novo Cadastro</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_field form.nome placeholder='' %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            {% bootstrap_field form.email placeholder='' style='height:15px;' %}
+                        </div>
+                        <div class="col-sm">
+                            {% bootstrap_field form.celular placeholder='' %}
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            {% bootstrap_field form.funcao placeholder='' %}
+                        </div>
+                        <div class="col-sm">
+                            {% bootstrap_field form.nascimento placeholder='' %}
+                        </div>
+                        <div class="col-sm">
+                            {% bootstrap_field form.ativo placeholder='' %}
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+        </center>
+{% endblock %}
+
+        <!-- footer -->
+{% block footer %}
+{% include "base/footer.html" %}
+{% endblock %}

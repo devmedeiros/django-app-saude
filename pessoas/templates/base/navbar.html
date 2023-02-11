@@ -1,0 +1,31 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="{% static 'health_logo.svg' %}" alt="Bootstrap" width="30" height="24">
+    Medeiros Saúde
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class "nav-item">
+        <a class="nav-link {% if request.resolver_match.url_name == 'home_alias' %} active {% endif %}" aria-current="page"
+          href="{% url 'home_alias'%}">Home</a>
+      </li>
+      <li class "nav-item">
+        <a class="nav-link {% if request.resolver_match.url_name == 'pacientes_alias' %} active {% endif %}" aria-current="page"
+          href="{% url 'pacientes_alias'%}">Pacientes</a>
+      </li>
+      <li class "nav-item">
+        <a class="nav-link {% if request.resolver_match.url_name == 'procedimentos_alias' %} active {% endif %}" aria-current="page"
+          href="{% url 'procedimentos_alias'%}">Procedimentos</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+    </form>
+  </div>
+</nav>
